@@ -1,0 +1,17 @@
+{
+  "packageId": "wpkAQqDXBm6EQ",
+  "spaceId": "spc7t0MPcdLS9",
+  "entry": "./src/index.tsx",
+  "name": {
+    "zh-CN": "ScriptDemo",
+    "en-US": "ScriptDemo"
+  },
+  "icon": "./package_icon.png",
+  "cover": "./cover.png",
+  "authorIcon": "./author_icon.png",
+  "description": {
+    "zh-CN": "ScriptDemo 的描述",
+    "en-US": "ScriptDemo description"
+  },
+  "sandbox": true
+}
