@@ -1,16 +1,15 @@
 import React from 'react';
 import { initializeWidget } from '@vikadata/widget-sdk';
-import { Setting } from './setting';
+import { store } from './store';
+import { Provider } from 'react-redux';
+import { Container } from './components';
 
-export const HelloWorld: React.FC = () => {
+export const Main: React.FC = () => {
   return (
-    <div style={{ display: 'flex', height: '100%' }}>
-      <div style={{ flexGrow: 1, overflow: 'auto', padding: '0 8px'}}>
-        hello，world 🚀
-      </div>
-      <Setting />
-    </div>
+    <Provider store={store}>
+      <Container />
+    </Provider>
   );
 };
 
-initializeWidget(HelloWorld, process.env.WIDGET_PACKAGE_ID);
+initializeWidget(Main, process.env.WIDGET_PACKAGE_ID);

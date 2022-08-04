@@ -1,0 +1,44 @@
+{
+	"strings": {
+    "script_start": {
+			"zh_CN": "开始使用",
+			"en_US": "Start"
+		},
+    "script_run": {
+			"zh_CN": "开始运行",
+			"en_US": "Run"
+		},
+    "script_document": {
+			"zh_CN": "文档",
+			"en_US": "document"
+		},
+    "script_edit_code": {
+			"zh_CN": "展开编辑器",
+			"en_US": "Edit code"
+		},
+    "script_finish_editing": {
+			"zh_CN": "折叠编辑器",
+			"en_US": "Finish editing"
+		},
+    "script_examples": {
+			"zh_CN": "示例",
+			"en_US": "Examples"
+		},
+    "script_console": {
+			"zh_CN": "控制台",
+			"en_US": "Console"
+		},
+    "script_stop": {
+			"zh_CN": "停止",
+			"en_US": "Stop"
+		},
+		"script_clear": {
+			"zh_CN": "清除",
+			"en_US": "Clear"
+		},
+		"script_next_step": {
+			"zh_CN": "下一步",
+			"en_US": "Next"
+		}
+  }
+}

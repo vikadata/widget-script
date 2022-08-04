@@ -1,0 +1,35 @@
+.documentPaneWrapper {
+	height: 100%;
+}
+
+.documentPaneContainer {
+	height: calc(100% - 36px);
+	position: relative;
+	flex-grow: 1;
+}
+
+.documentPaneContainer iframe {
+	width: 100%;
+	height: 100%;
+	background-color: var(--bgCommonDefault);
+}
+
+.documentPaneHeader {
+	width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bgCommonDefault);
+  border-bottom: 1px solid var(--borderCommon);
+}
+
+.documentPaneTitle {
+  margin-left: 8px;
+  color: var(--textCommonTertiary);
+}
+
+.documentToggleBtn {
+  margin-right: 8px;
+  cursor: pointer;
+}

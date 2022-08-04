@@ -1,12 +1,12 @@
 {
-  "packageId": "wpkAQqDXBm6EQ",
-  "spaceId": "spc7t0MPcdLS9",
+  "packageId": "wpkARFnCU23Fl",
+  "spaceId": "spczdmQDfBAn5",
   "entry": "./src/index.tsx",
   "name": {
     "zh-CN": "ScriptDemo",
     "en-US": "ScriptDemo"
   },
-  "icon": "./package_icon.png",
+  "icon": "./logo.png",
   "cover": "./cover.png",
   "authorIcon": "./author_icon.png",
   "description": {
