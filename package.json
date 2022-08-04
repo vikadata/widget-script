@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a vika widget",
   "engines": {
     "node": ">=8.x"
@@ -34,7 +34,6 @@
     "@vikadata/widget-sdk": "0.0.8-alpha.3",
     "ahooks": "^3.5.2",
     "allotment": "^1.14.2",
-    
     "axios": "^0.27.2",
     "console-feed": "3.2.2",
     "esbuild-wasm": "latest",
