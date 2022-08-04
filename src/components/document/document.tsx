@@ -2,12 +2,11 @@ import React, { useRef } from 'react';
 import { shallowEqual } from 'react-redux';
 import { t } from '@vikadata/widget-sdk';
 import { useTheme } from '@vikadata/components';
-import { ChevronDownOutlined, ChevronUpOutlined } from '@vikadata/icons';
+import { ChevronDownOutlined, ChevronUpOutlined, ColumnLinktableFilled } from '@vikadata/icons';
 import { editorState, toggleDocumentPane, useDispatch, useSelector } from '../../store';
 import { Strings } from '../../utils';
 import './style.css';
 
-// const DOCUMENT_URL = 'http://localhost:3003/developers/script/introduction';
 const DOCUMENT_URL = 'https://bba1ca93.developers-6w5.pages.dev/script/introduction/';
 
 export const Document = () => {
@@ -28,11 +27,18 @@ export const Document = () => {
         <div className="documentPaneTitle">
           {t(Strings.script_document)}
         </div>
-        <IconComponent 
-          color={color.textCommonTertiary} 
-          className='documentToggleBtn'
-          onClick={onClick}
-        />
+        <div className="documentPaneRight">
+          <ColumnLinktableFilled 
+            color={color.textCommonTertiary} 
+            className='documentLinkBtn'
+            onClick={() => window.open(DOCUMENT_URL, '_blank')}
+          />
+          <IconComponent 
+            color={color.textCommonTertiary} 
+            className='documentToggleBtn'
+            onClick={onClick}
+          />
+        </div>
       </div>
       <div className='documentPaneContainer'>
         <iframe
