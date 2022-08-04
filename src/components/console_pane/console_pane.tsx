@@ -4,7 +4,7 @@ import { ChevronDownOutlined, ChevronUpOutlined, ClearOutlined } from '@vikadata
 import { clearLogs, editorState, toggleConsolePane, useDispatch, useSelector } from "../../store";
 import { useTheme } from "@vikadata/components";
 import { Strings } from "../../utils";
-import { t } from "@vikadata/widget-sdk";
+import { t, useMeta } from "@vikadata/widget-sdk";
 import './style.css';
 
 export const ConsolePane = memo(() => {
@@ -12,6 +12,8 @@ export const ConsolePane = memo(() => {
     logs, 
     isConsolePaneOpen 
   } = useSelector(editorState);
+  const meta = useMeta();
+  const themeName = meta.theme;
   const dispatch = useDispatch();
   const { color } = useTheme() as any;
 
@@ -58,7 +60,7 @@ export const ConsolePane = memo(() => {
             LOG_ICON_HEIGHT: 22,
           }}
           logs={logs as any}
-          variant="light"
+          variant={themeName}
         />
       </div>
     </div>

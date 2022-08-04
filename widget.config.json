@@ -3,15 +3,15 @@
   "spaceId": "spczdmQDfBAn5",
   "entry": "./src/index.tsx",
   "name": {
-    "zh-CN": "ScriptDemo",
-    "en-US": "ScriptDemo"
+    "zh-CN": "Script",
+    "en-US": "Script"
   },
   "icon": "./logo.png",
   "cover": "./cover.png",
   "authorIcon": "./author_icon.png",
   "description": {
-    "zh-CN": "ScriptDemo 的描述",
-    "en-US": "ScriptDemo description"
+    "zh-CN": "通过编写简短的脚本，来减少重复任务所花费的时间，实现快捷的自定义能力",
+    "en-US": "Reduce the time spent on repetitive tasks by writing short scripts for quick customization capabilities"
   },
   "sandbox": true
 }
