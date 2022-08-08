@@ -64,15 +64,33 @@ export const htmlTemplate = `
     window.addEventListener('message', (event) => {
       try {
         eval(event.data)
-      } catch(e) {
+      } catch(err) {
         const root = document.querySelector('#root');
         const errorMessage = document.createElement('div');
         errorMessage.style.color = 'red';
-        errorMessage.innerHTML = '<h4>Runtime Error</h4></p>'+e+'</p>';
-        root.append(errorMessage)
-        console.error(e)
+        errorMessage.innerHTML = '<h4>Runtime Error</h4></p>' + err + '</p>';
+        root.append(errorMessage);
+        console.error(err);
       }
     }, false)
+
+    window.onerror = function (err) {
+      const root = document.querySelector('#root');
+      const errorMessage = document.createElement('div');
+      errorMessage.style.color = 'red';
+      errorMessage.innerHTML = '<h4>Runtime Error</h4></p>' + err + '</p>';
+      root.append(errorMessage);
+      window.parent.postMessage({ source: "iframe", type: "iframe_error", message: err }, "*");
+    };
+
+    window.onunhandledrejection = function (err) {
+      const root = document.querySelector('#root');
+      const errorMessage = document.createElement('div');
+      errorMessage.style.color = 'red';
+      errorMessage.innerHTML = '<h4>Runtime Error</h4></p>' + err.reason + '</p>';
+      root.append(errorMessage);
+      window.parent.postMessage({ source: "iframe", type: "iframe_error", message: err.reason }, "*");
+    };
   </script>
 </body>
 </html>

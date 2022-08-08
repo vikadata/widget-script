@@ -1,3 +1,5 @@
+// import { marked } from 'marked';
+
 export class Output {
   private documentElem: Document;
   private container: Element;
@@ -13,6 +15,12 @@ export class Output {
     title.className = 'title';
     this.container.appendChild(title);
   }
+
+  // public markdown(source: string) {
+  //   const markdownContainer = this.documentElem.createElement('div');
+  //   markdownContainer.innerHTML = marked.parse(source);
+  //   this.container.appendChild(markdownContainer);
+  // }
 
   public clear() {
     let child = this.container.lastElementChild;  

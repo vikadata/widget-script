@@ -7,7 +7,7 @@ import { editorState, toggleDocumentPane, useDispatch, useSelector } from '../..
 import { Strings } from '../../utils';
 import './style.css';
 
-const DOCUMENT_URL = 'https://bba1ca93.developers-6w5.pages.dev/script/introduction/';
+const DOCUMENT_URL = 'https://docs-script.developers-6w5.pages.dev/script/introduction/';
 
 export const Document = () => {
   const { isDocumentPaneOpen } = useSelector(editorState, shallowEqual);

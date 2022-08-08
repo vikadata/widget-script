@@ -1441,6 +1441,11 @@
   resolved "https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.161.tgz#a21ca0777dabc6e4f44f3d07f37b765f54188b18"
   integrity sha512-EP6O3Jkr7bXvZZSZYlsgt5DIjiGr0dXP1/jVEwVLTFgg0d+3lWVQkRavYVQszV7dYUwvg0B8R0MBDpcmXg7XIA==
 
+"@types/marked@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-4.0.3.tgz#2098f4a77adaba9ce881c9e0b6baf29116e5acc4"
+  integrity sha512-HnMWQkLJEf/PnxZIfbm0yGJRRZYYMhb++O9M36UCTA9z53uPvVoSlAwJr3XOpDEryb7Hwl1qAx/MV6YIW1RXxg==
+
 "@types/minimatch@*":
   version "3.0.5"
   resolved "https://registry.npmmirror.com/@types/minimatch/-/minimatch-3.0.5.tgz#1001cc5e6a3704b83c236027e77f2f58ea010f40"
@@ -1586,10 +1591,10 @@
     "@types/react" "^16.9.41"
     memoize-one "^5.1.1"
 
-"@vikadata/widget-sdk@0.0.8-alpha.3":
-  version "0.0.8-alpha.3"
-  resolved "https://registry.yarnpkg.com/@vikadata/widget-sdk/-/widget-sdk-0.0.8-alpha.3.tgz#25eff2b3dbcd0377c5a13a7881c4583460333eea"
-  integrity sha512-qBE1mgGIZylUpunqSKh+qdzP+LTlBYBfjYt5i4hIIouGUNypDLhDMq0Wpn5hfmsPZez6t4n60aUEtZtCUAOOZw==
+"@vikadata/widget-sdk@0.0.8-alpha.4":
+  version "0.0.8-alpha.4"
+  resolved "https://registry.yarnpkg.com/@vikadata/widget-sdk/-/widget-sdk-0.0.8-alpha.4.tgz#8b6453e06bfd7020657995e996ca325291154864"
+  integrity sha512-rIgbBGSeCvlb958l2PdHQcxQyCo87QEPy5GImjU/hzdHc2IdFdMTtpjwt3bTzS1B4kvjeYmuH9GoYmV+ihiPyg==
   dependencies:
     "@babel/runtime" "^7.10.1"
     "@types/localforage" "^0.0.34"
@@ -3326,6 +3331,11 @@ make-dir@^3.0.2, make-dir@^3.1.0:
   integrity sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==
   dependencies:
     semver "^6.0.0"
+
+marked@^4.0.18:
+  version "4.0.18"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.18.tgz#cd0ac54b2e5610cfb90e8fd46ccaa8292c9ed569"
+  integrity sha512-wbLDJ7Zh0sqA0Vdg6aqlbT+yPxqLblpAZh1mK2+AO2twQkPywvvqQNfEPVwSSRjZ7dZcdeVBIAgiO7MMp3Dszw==
 
 material-colors@^1.2.1:
   version "1.2.6"

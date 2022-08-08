@@ -17,13 +17,26 @@ export const Previewer = () => {
   useEffect(() => {
     if (!isRunning) return;
 		iframeRef.current.srcdoc = htmlTemplate;
-	}, [isRunning, bundledCode])
+	}, [isRunning])
 
   useEffect(() => {
     if (!isRunning && !isInitialize) {
       iframeRef.current.contentWindow.postMessage('globalDisabled()', '*')
     };
 	}, [isRunning, isInitialize])
+
+  useEffect(() => {
+    window.onmessage = function (response: MessageEvent) {
+      if (response.data && response.data.source === "iframe") {
+        let errorObject = {
+          method: "error",
+          id: Date.now(),
+          data: [`${response.data.message}`],
+        };
+        dispatch(updateLogs(errorObject));
+      }
+    };
+  }, []);
 
   return (
     <div className='preview-wrapper'>
