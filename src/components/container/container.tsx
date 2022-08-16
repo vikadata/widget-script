@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { shallowEqual } from 'react-redux';
 import { useCloudStorage, useViewport } from '@vikadata/widget-sdk';
-import { CodeEditor, Previewer, ConsolePane, Header, Document, Welcome } from '../../components';
+import { EditorPanel, PreviewPanel, ConsolePanel, DocumentPanel, Header, WelcomePanel } from '../../components';
 import { editorState, useSelector } from '../../store';
 import { Allotment } from 'allotment';
 import "allotment/dist/style.css";
-import "./style.css";
+import "./style.less";
 
 const INITIAL_CODE = `output.text('Hello World');`;
 
@@ -46,7 +46,7 @@ export const Container: React.FC = () => {
             >
               {/* 代码编辑器 */}
               <Allotment.Pane minSize={100}>
-                <CodeEditor 
+                <EditorPanel 
                   code={inputCode}
                   onChange={(value) => setInputCode(value)} 
                 />
@@ -57,7 +57,7 @@ export const Container: React.FC = () => {
                 minSize={36}
                 maxSize={isDocumentPaneOpen ? 520 : 36} 
               >
-                <Document />
+                <DocumentPanel />
               </Allotment.Pane>
             </Allotment>
           }
@@ -78,9 +78,9 @@ export const Container: React.FC = () => {
                     position: 'relative',
                   }}
                 >
-                  <Previewer />
+                  <PreviewPanel />
                   {
-                    isInitialize && <Welcome code={inputCode} /> 
+                    isInitialize && <WelcomePanel code={inputCode} /> 
                   }
                 </div>
               </Allotment.Pane>
@@ -90,7 +90,7 @@ export const Container: React.FC = () => {
                 minSize={36}
                 maxSize={isConsolePaneOpen ? 520 : 36}
               >
-                <ConsolePane />
+                <ConsolePanel />
               </Allotment.Pane>
             </Allotment>
           }

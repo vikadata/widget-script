@@ -31,13 +31,12 @@ export const bundler = async(code: string) => {
       entryPoints: ['index.js'],
       bundle: true,
       write: false,
-      // sourcemap: true,
-      // plugins: [unpkgPathPlugin(code), fetchPlugin(code)],
       plugins: [
         unpkgPathPlugin(code),
         fetchPlugin(code)
       ],
       format: 'cjs',
+      // sourcemap: true,
       // minify: true,
       target: 'es2016',
       define: {

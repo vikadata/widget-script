@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
-import { CollapseOutlined, ExpandOutlined } from '@vikadata/icons'
 import { Button } from '@vikadata/components';
 import { t, useViewport } from '@vikadata/widget-sdk';
+import { CollapseOutlined, ExpandOutlined } from '@vikadata/icons'
 import { useDispatch, updateBundledCode, toggleEditorPane, updateRunningState } from '../../store';
 import { bundler } from '../../bundler';
-import { Strings } from '../../utils';
-import styles from './style.css';
-import classNames from 'classnames';
+import { Strings } from '../../render_components';
+import { Container, ToggleButton } from './styled';
 
 interface IHeaderProps {
   code: string;
@@ -48,26 +47,24 @@ export const Header: FC<IHeaderProps> = ({
   };
 
   return (
-    <header className={styles.header}>
-      <Button 
+    <Container>
+      <ToggleButton 
         size='small' 
-        className={classNames(styles.headerBtn, styles.toggleEditorBtn)} 
         onClick={toggleEditorStatus}
         prefixIcon={isEditorPaneOpen ? <CollapseOutlined /> : <ExpandOutlined />}
       >
         {isEditorPaneOpen ? t(Strings.script_finish_editing) : t(Strings.script_edit_code)}
-      </Button>
+      </ToggleButton>
       {
         !isInitialize &&
         <Button 
           size='small' 
-          className={classNames(styles.headerBtn, styles.runBtn)}
           onClick={toggleRunningState}
-          color={isRunning ? 'danger' :  'primary'}
+          color={isRunning ? 'danger' : 'primary'}
         >
           {isRunning ? t(Strings.script_stop) : t(Strings.script_run)}
         </Button>
       }
-    </header>
+    </Container>
   )
 }

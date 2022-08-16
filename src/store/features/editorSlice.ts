@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Message } from 'console-feed/lib/definitions/Console';
+import { Message } from 'console-feed/lib/definitions/Component';
 import { RootState } from '../store';
 
 export interface IEditorSlice {
