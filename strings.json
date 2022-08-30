@@ -39,6 +39,14 @@
 		"script_next_step": {
 			"zh_CN": "下一步",
 			"en_US": "Next"
+		},
+		"script_serial_number": {
+			"zh_CN": "序号",
+			"en_US": "Number"
+		},
+		"script_select_record_by_sheet": {
+			"zh_CN": "选择「${datasheetName}」的记录",
+			"en_US": "Select records from ${datasheetName}"
 		}
   }
 }

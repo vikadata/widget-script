@@ -10,7 +10,7 @@ import {
   Content,
   Button
 } from '../text_async/styled';
-import { IContentWindow } from '../../input';
+import { IContentWindow } from '../../render_base';
 import { Select } from '../select';
 import { Field } from '@vikadata/widget-sdk/dist/script/field';
 import { View } from '@vikadata/widget-sdk/dist/script/view';
@@ -21,7 +21,7 @@ export enum RenderType {
 }
 
 interface ISelectAsyncBase<T, K> {
-  id: number;
+  id: string;
   name?: string;
   nextFn: (value: K) => void;
   window: IContentWindow;

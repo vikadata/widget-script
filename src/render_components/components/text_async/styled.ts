@@ -9,6 +9,7 @@ export const Label = styled.div`
 
 export const Content = styled.div`
   display: flex;
+  margin-bottom: 16px;
 `;
 
 export const Input = styled(InputComponent)`

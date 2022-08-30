@@ -1,26 +1,33 @@
-import { marked } from 'marked';
+import React from 'react';
+import ReactMarkdown from 'react-markdown'
+import { Table } from './components';
 import { Output } from './output.interface';
+import { IContentWindow, RenderBase } from './render_base';
 
-export class OutputClass implements Output {
-  private documentElem: Document;
-  private container: Element;
-
-  constructor(documentElem: Document) {
-    this.documentElem = documentElem;
-    this.container = this.documentElem.getElementById('root') || this.documentElem.body;
+export class OutputClass extends RenderBase implements Output {
+  constructor(window: IContentWindow) {
+    super(window)
   }
 
   public text(name: string) {
-    const title = this.documentElem.createElement('div');
-    title.textContent = name || '';
-    title.className = 'title';
-    this.container.appendChild(title);
+    this.renderComponent(
+      <div>{name}</div>
+    );
   }
 
   public markdown(source: string) {
-    const markdownContainer = this.documentElem.createElement('div');
-    markdownContainer.innerHTML = marked.parse(source);
-    this.container.appendChild(markdownContainer);
+    this.renderComponent(
+      <ReactMarkdown>
+        {source}
+      </ReactMarkdown>
+    );
+  }
+
+  public table(data: (string | number | Object)[]) {
+    const props = { data };
+    this.renderComponent(
+      <Table {...props as any} />
+    );
   }
 
   public clear() {

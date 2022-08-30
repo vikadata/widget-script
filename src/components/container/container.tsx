@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import { Allotment } from 'allotment';
 import { shallowEqual } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 import { useCloudStorage, useViewport } from '@vikadata/widget-sdk';
 import { EditorPanel, PreviewPanel, ConsolePanel, DocumentPanel, Header, WelcomePanel } from '../../components';
 import { editorState, useSelector } from '../../store';
-import { Allotment } from 'allotment';
 import "allotment/dist/style.css";
 import "./style.less";
 
 const INITIAL_CODE = `output.text('Hello World');`;
 
 export const Container: React.FC = () => {
+  const { isFullscreen } = useViewport();
   const [sourceCode, setSourceCode] = useCloudStorage('scriptData', INITIAL_CODE);
   const [inputCode, setInputCode] = useState(sourceCode);
-  const { isFullscreen } = useViewport();
   const { 
     isEditorPaneOpen, 
     isConsolePaneOpen,
     isDocumentPaneOpen,
     isRunning,
-    isInitialize
+    isInitialize,
   } = useSelector(editorState, shallowEqual);
 
   useEffect(() => {

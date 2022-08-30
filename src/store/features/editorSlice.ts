@@ -52,7 +52,7 @@ export const editorSlice = createSlice({
     },
     toggleDocumentPane: (state: IEditorSlice) => {
       state.isDocumentPaneOpen = !state.isDocumentPaneOpen;
-    }
+    },
   }
 })
 
@@ -69,7 +69,7 @@ export const {
   clearLogs,
   toggleEditorPane,
   toggleConsolePane,
-  toggleDocumentPane
+  toggleDocumentPane,
 } = editorSlice.actions;
 
 /**

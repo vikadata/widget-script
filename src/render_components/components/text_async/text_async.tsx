@@ -10,10 +10,10 @@ import {
   Input,
   Button
 } from './styled';
-import { IContentWindow } from '../../input';
+import { IContentWindow } from '../../render_base';
 
 interface ITextAsyncProps {
-  id: number;
+  id: string;
   name?: string;
   nextFn: (value: string) => void;
   window: IContentWindow;

@@ -1,7 +1,7 @@
 import { Hook } from 'console-feed';
 import { shallowEqual } from 'react-redux';
 import React, { useContext, useEffect, useRef } from 'react';
-import { IWidgetContext } from '@vikadata/widget-sdk';
+import { IWidgetContext, widgetMessage } from '@vikadata/widget-sdk';
 import { htmlTemplate } from './html_template';
 import { InputClass, OutputClass } from '../../render_components';
 import { editorState, updateLogs, updateRunningState, useDispatch, useSelector } from '../../store';
@@ -48,7 +48,6 @@ export const PreviewPanel = () => {
         frameBorder={'none'}
         onLoad={async () => {
           const iframeWindow = iframeRef.current.contentWindow;
-          const iframeDocument = iframeRef.current.contentWindow.document;
           iframeWindow.componentMap = new Map();
           iframeWindow.globalStop = () => {
             dispatch(updateRunningState(false));
@@ -57,8 +56,11 @@ export const PreviewPanel = () => {
             (iframeWindow.componentMap as Map<string, Function>).forEach((fn) => fn());
           }
           iframeWindow.space = new Script.Space(context);
-          iframeWindow.input = new InputClass(iframeWindow);
-          iframeWindow.output = new OutputClass(iframeDocument);
+          iframeWindow.input = new InputClass(iframeWindow, async (datasheet) => {
+            const result = await widgetMessage.expandRecordPicker(datasheet.id);
+            return result.data[0];
+          });
+          iframeWindow.output = new OutputClass(iframeWindow);
           Hook(
             iframeWindow.console,
             (log) => dispatch(updateLogs(log)),

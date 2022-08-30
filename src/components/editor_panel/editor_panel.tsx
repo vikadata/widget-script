@@ -68,11 +68,11 @@ const allTypes = [
   ['@types/lodash/common/seq.d.ts', lodashSeq],
   ['@types/lodash/common/string.d.ts', lodashString],
   ['@types/lodash/common/util.d.ts', lodashUtil],
-  ['@types/vikadata/space.d.ts', spaceTyping],
-  ['@types/vikadata/datasheet.d.ts', datasheetTyping],
-  ['@types/vikadata/view.d.ts', viewTyping],
-  ['@types/vikadata/field.d.ts', fieldTyping],
-  ['@types/vikadata/record.d.ts', recordTyping],
+  ['@vikadata/widget-sdk/dist/script/space.d.ts', spaceTyping],
+  ['@vikadata/widget-sdk/dist/script/datasheet.d.ts', datasheetTyping],
+  ['@vikadata/widget-sdk/dist/script/view.d.ts', viewTyping],
+  ['@vikadata/widget-sdk/dist/script/field.d.ts', fieldTyping],
+  ['@vikadata/widget-sdk/dist/script/record.d.ts', recordTyping],
   ['@types/vikadata/input.d.ts', inputTyping],
   ['@types/vikadata/output.d.ts', outputTyping],
 ];
@@ -103,7 +103,7 @@ export const EditorPanel = (props) => {
     monaco.editor.setTheme("customTheme");
 		editor.onDidChangeModelContent(() => {
       run(editor.getValue())
-		})
+		}) 
 	}
 
   useEffect(() => {
@@ -111,13 +111,17 @@ export const EditorPanel = (props) => {
       return;
     }
 
-    monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+    monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+      diagnosticCodesToIgnore: [1375, 1378],
+    });
+
+    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
       target: monaco.languages.typescript.ScriptTarget.ESNext,
-      allowNonTsExtensions: true
+      allowNonTsExtensions: true,
     });
 
     allTypes.map(([path, content]) => {
-      monaco.languages.typescript.javascriptDefaults.addExtraLib(
+      monaco.languages.typescript.typescriptDefaults.addExtraLib(
         content,
         path
       );
@@ -131,7 +135,7 @@ export const EditorPanel = (props) => {
       value={code}
       height="100%"
       theme={monacoTheme}
-      language="javascript"
+      language="typescript"
       onMount={onEditorDidMount}
       loading={<Loading />}
       options={{
