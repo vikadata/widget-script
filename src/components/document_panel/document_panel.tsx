@@ -15,7 +15,7 @@ import {
   Iframe
 } from './styled';
 
-const DOCUMENT_URL = 'https://docs-script.developers-6w5.pages.dev/script/introduction/';
+const DOCUMENT_URL = 'https://docs-script-document.developers-6w5.pages.dev/script/introduction/';
 
 export const DocumentPanel = () => {
   const { isDocumentPaneOpen } = useSelector(editorState, shallowEqual);

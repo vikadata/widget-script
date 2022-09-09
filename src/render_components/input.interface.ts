@@ -4,8 +4,8 @@ import { Record } from "@vikadata/widget-sdk/dist/script/record";
 import { Datasheet } from "@vikadata/widget-sdk/dist/script/datasheet";
 
 export interface Input {
-  textAsync: (name?: string) => Promise<string>;
-  viewAsync: (name: string, datasheet: Datasheet) => Promise<View>;
-  fieldAsync: (name: string, datasheet: Datasheet) => Promise<Field>;
-  recordAsync: (name: string, datasheet: Datasheet) => Promise<Record>;
+  textAsync: (label?: string) => Promise<string>;
+  viewAsync: (label: string, datasheet: Datasheet) => Promise<View>;
+  fieldAsync: (label: string, datasheet: Datasheet) => Promise<Field>;
+  recordAsync: (label: string, datasheet: Datasheet) => Promise<Record>;
 }
