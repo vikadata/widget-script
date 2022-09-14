@@ -7,10 +7,12 @@ import { Input } from './input.interface';
 import { IContentWindow, RenderBase } from './render_base';
 import { TextAsync, SelectAsync, RenderType, RecordAsync } from './components';
 
-export class InputClass extends RenderBase implements Input {
-  private triggerFn: (datasheet: Datasheet) => string;
+type TriggerFn = (datasheet: Datasheet) => Promise<string>;
 
-  constructor(window: IContentWindow, triggerFn: (datasheet: Datasheet) => string) {
+export class InputClass extends RenderBase implements Input {
+  private triggerFn: TriggerFn;
+
+  constructor(window: IContentWindow, triggerFn: TriggerFn) {
     super(window);
     this.triggerFn = triggerFn;
   }

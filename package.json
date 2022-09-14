@@ -39,7 +39,7 @@
     "axios": "^0.27.2",
     "color": "^4.2.3",
     "console-feed": "3.2.2",
-    "esbuild-wasm": "latest",
+    "esbuild-wasm": "0.14.42",
     "monaco-editor": "^0.33.0",
     "raw-loader": "^4.0.2",
     "rc-trigger": "^5.0.6",

@@ -10,7 +10,7 @@ const initEsbuild = async () => {
 	try {
 		if (!service) {
 			service = esbuild.initialize({
-				wasmURL: `${CDN_URL}/esbuild-wasm@0.14.53/esbuild.wasm`,
+				wasmURL: `${CDN_URL}/esbuild-wasm@0.14.42/esbuild.wasm`,
 			});
 		}
 		await service;

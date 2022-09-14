@@ -2786,10 +2786,10 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
-esbuild-wasm@latest:
-  version "0.14.53"
-  resolved "https://registry.npmmirror.com/esbuild-wasm/-/esbuild-wasm-0.14.53.tgz#80607cbf303ed6fc90a68900cd6be99f9d16cc74"
-  integrity sha512-7b9EaBu6T16D4++/tEecq60wa1/latTo55U2frlpD5ATZSS2CpJ4Dd64Wck+xRXZp8pMJ5eQHEDiCr5bU2naQA==
+esbuild-wasm@0.14.42:
+  version "0.14.42"
+  resolved "https://registry.yarnpkg.com/esbuild-wasm/-/esbuild-wasm-0.14.42.tgz#c3f54a0b5407d0dfa535bcab9b2c6980778d47ae"
+  integrity sha512-gaR16gg58YxDyIXjS/8zVKxnC0IqbPAqMCVv4Yu6PmrJFoFzhverHINiM24MXuhnngHYCTIn4p3t3JjkfkMPdg==
 
 escalade@^3.1.1:
   version "3.1.1"
