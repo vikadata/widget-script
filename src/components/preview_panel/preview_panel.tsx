@@ -44,7 +44,7 @@ export const PreviewPanel = () => {
         ref={iframeRef}
         title="users-html"
         srcDoc={htmlTemplate}
-        sandbox="allow-same-origin allow-scripts"
+        sandbox="allow-same-origin allow-scripts allow-popups"
         frameBorder={'none'}
         onLoad={async () => {
           const iframeWindow = iframeRef.current.contentWindow;

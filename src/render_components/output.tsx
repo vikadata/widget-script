@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown'
-import { Table } from './components';
 import { Output } from './output.interface';
+import { Markdown, Table } from './components';
 import { IContentWindow, RenderBase } from './render_base';
 
 export class OutputClass extends RenderBase implements Output {
@@ -17,9 +16,9 @@ export class OutputClass extends RenderBase implements Output {
 
   public markdown(source: string) {
     this.renderComponent(
-      <ReactMarkdown>
-        {source}
-      </ReactMarkdown>
+      <Markdown 
+        source={source}
+      />
     );
   }
 
