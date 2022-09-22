@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import MonacoEditor, { OnMount, useMonaco } from '@monaco-editor/react'
 import { useMeta } from '@vikadata/widget-sdk';
 import { Loading, useTheme, rgba2hex, ThemeName } from "@vikadata/components";
-import './style.less';
+import './style.css';
 
 // External API
 import lodashIndex from '!raw-loader!@types/lodash/index.d.ts';

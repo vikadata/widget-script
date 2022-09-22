@@ -5,7 +5,7 @@ import { useCloudStorage, useViewport } from '@vikadata/widget-sdk';
 import { EditorPanel, PreviewPanel, ConsolePanel, DocumentPanel, Header, WelcomePanel } from '../../components';
 import { editorState, useSelector } from '../../store';
 import "allotment/dist/style.css";
-import "./style.less";
+import "./style.css";
 
 const INITIAL_CODE = `output.text('Hello World');`;
 

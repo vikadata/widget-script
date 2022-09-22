@@ -1,0 +1,4 @@
+
+:global(.allotment, .split-view-view) {
+  overflow: visible !important;
+}
