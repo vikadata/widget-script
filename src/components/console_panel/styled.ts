@@ -27,6 +27,7 @@ export const HeaderRight = styled.div`
 
 export const IconWrapper = styled.span`
   margin-right: 8px;
+  height: 16px;
   cursor: pointer;
 `;
 

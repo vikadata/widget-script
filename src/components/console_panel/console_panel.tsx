@@ -30,23 +30,26 @@ export const ConsolePanel = memo(() => {
     dispatch(toggleConsolePane());
   }
 
+  const onClear = (e) => {
+    e.stopPropagation()
+    dispatch(clearLogs());
+  }
+
   return (
     <Container>
-      <Header>
+      <Header onClick={onClick}>
         <Title>
           {t(Strings.script_console)}
         </Title>
         <HeaderRight>
-          <IconWrapper>
+          <IconWrapper onClick={onClear}>
             <ClearOutlined 
               color={color.textCommonTertiary} 
-              onClick={() => dispatch(clearLogs())}
             />
           </IconWrapper>
           <IconWrapper>
             <IconComponent 
               color={color.textCommonTertiary} 
-              onClick={onClick}
             />
           </IconWrapper>
         </HeaderRight>

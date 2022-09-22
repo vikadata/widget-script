@@ -7,13 +7,15 @@ import { editorState, toggleDocumentPane, useDispatch, useSelector } from '../..
 import { Strings } from '../../render_components';
 import { 
   Container,
+  Iframe
+} from './styled';
+import { 
   Header,
   Title,
   HeaderRight,
   IconWrapper,
   Content,
-  Iframe
-} from './styled';
+} from '../console_panel/styled';
 
 const DOCUMENT_URL = 'https://docs-script-document.developers-6w5.pages.dev/script/introduction/';
 
@@ -29,23 +31,26 @@ export const DocumentPanel = () => {
     dispatch(toggleDocumentPane());
   }
 
+  const onOpen = (e) => {
+    e.stopPropagation()
+    window.open(DOCUMENT_URL, '_blank')
+  }
+
   return (
     <Container>
-      <Header>
+      <Header onClick={onClick}>
         <Title>
           {t(Strings.script_document)}
         </Title>
         <HeaderRight>
-          <IconWrapper>
+          <IconWrapper onClick={onOpen}>
             <ColumnLinktableFilled 
               color={color.textCommonTertiary} 
-              onClick={() => window.open(DOCUMENT_URL, '_blank')}
             />
           </IconWrapper>
           <IconWrapper>
             <IconComponent 
               color={color.textCommonTertiary} 
-              onClick={onClick}
             />
           </IconWrapper>
         </HeaderRight>
