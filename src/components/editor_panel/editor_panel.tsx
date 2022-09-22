@@ -1,7 +1,6 @@
 import { useDebounceFn } from 'ahooks';
 import React, { useEffect, useRef } from 'react';
-import * as monaco from 'monaco-editor';
-import MonacoEditor, { OnMount, useMonaco, loader } from '@monaco-editor/react'
+import MonacoEditor, { OnMount, useMonaco } from '@monaco-editor/react'
 import { useMeta } from '@vikadata/widget-sdk';
 import { Loading, useTheme, rgba2hex, ThemeName } from "@vikadata/components";
 import './style.less';
@@ -33,10 +32,6 @@ import input from '!raw-loader!../../render_components/input.interface.ts';
 import output from '!raw-loader!../../render_components/output.interface.ts';
 
 let typesLoaded = false;
-
-loader.config({
-  monaco
-});
 
 const spaceTyping = `
   ${space}
