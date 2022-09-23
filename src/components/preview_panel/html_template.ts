@@ -20,35 +20,29 @@ export const htmlTemplate = `
 <body>
   <div id="root"></div>
   <script type="module">
+    function createErrorTip(errMsg) {
+      const root = document.querySelector('#root');
+      const errorMessage = document.createElement('div');
+      errorMessage.style.color = 'red';
+      errorMessage.innerHTML = '<h4>Runtime Error</h4><p>' + errMsg + '</p>';
+      root.append(errorMessage);
+      window.parent.postMessage({ source: "iframe", type: "iframe_error", message: errMsg }, "*");
+    }
+
     window.addEventListener('message', (event) => {
       try {
         eval(event.data)
       } catch(err) {
-        const root = document.querySelector('#root');
-        const errorMessage = document.createElement('div');
-        errorMessage.style.color = 'red';
-        errorMessage.innerHTML = '<h4>Runtime Error</h4></p>' + err + '</p>';
-        root.append(errorMessage);
-        console.error(err);
+        createErrorTip(err);
       }
     }, false)
 
     window.onerror = function (err) {
-      const root = document.querySelector('#root');
-      const errorMessage = document.createElement('div');
-      errorMessage.style.color = 'red';
-      errorMessage.innerHTML = '<h4>Runtime Error</h4></p>' + err + '</p>';
-      root.append(errorMessage);
-      window.parent.postMessage({ source: "iframe", type: "iframe_error", message: err }, "*");
+      createErrorTip(err);
     };
 
     window.onunhandledrejection = function (err) {
-      const root = document.querySelector('#root');
-      const errorMessage = document.createElement('div');
-      errorMessage.style.color = 'red';
-      errorMessage.innerHTML = '<h4>Runtime Error</h4></p>' + err.reason + '</p>';
-      root.append(errorMessage);
-      window.parent.postMessage({ source: "iframe", type: "iframe_error", message: err.reason }, "*");
+      createErrorTip(err.reason);
     };
   </script>
 </body>

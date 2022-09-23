@@ -38,6 +38,29 @@ export const PreviewPanel = () => {
     };
   }, []);
 
+  const onLoad = async () => {
+    const iframeWindow = iframeRef.current.contentWindow;
+    iframeWindow.componentMap = new Map();
+    iframeWindow.globalStop = () => {
+      dispatch(updateRunningState(false));
+    }
+    iframeWindow.globalDisabled = () => {
+      (iframeWindow.componentMap as Map<string, Function>).forEach((fn) => fn());
+    }
+    iframeWindow.space = new Script.Space(context);
+    iframeWindow.input = new InputClass(iframeWindow, async (datasheet) => {
+      const result = await (widgetMessage as any).expandRecordPicker(datasheet.id);
+      return result.data[0];
+    });
+    iframeWindow.output = new OutputClass(iframeWindow);
+    Hook(
+      iframeWindow.console,
+      (log) => dispatch(updateLogs(log)),
+      false
+    );
+    iframeWindow.postMessage(bundledCode, '*');
+  }
+
   return (
     <Container>
       <Iframe
@@ -46,28 +69,7 @@ export const PreviewPanel = () => {
         srcDoc={htmlTemplate}
         sandbox="allow-same-origin allow-scripts allow-popups"
         frameBorder={'none'}
-        onLoad={async () => {
-          const iframeWindow = iframeRef.current.contentWindow;
-          iframeWindow.componentMap = new Map();
-          iframeWindow.globalStop = () => {
-            dispatch(updateRunningState(false));
-          }
-          iframeWindow.globalDisabled = () => {
-            (iframeWindow.componentMap as Map<string, Function>).forEach((fn) => fn());
-          }
-          iframeWindow.space = new Script.Space(context);
-          iframeWindow.input = new InputClass(iframeWindow, async (datasheet) => {
-            const result = await (widgetMessage as any).expandRecordPicker(datasheet.id);
-            return result.data[0];
-          });
-          iframeWindow.output = new OutputClass(iframeWindow);
-          Hook(
-            iframeWindow.console,
-            (log) => dispatch(updateLogs(log)),
-            false
-          );
-          iframeWindow.postMessage(bundledCode, '*');
-        }}
+        onLoad={onLoad}
       />
     </Container>
   )
