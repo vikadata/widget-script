@@ -3,8 +3,8 @@ import { Message } from 'console-feed/lib/definitions/Component';
 import { RootState } from '../store';
 
 export interface IEditorSlice {
-  isRunning: boolean; // 是否处于运行状态
-  isInitialize: boolean; // 是否是初始状态
+  isRunning: boolean;
+  isInitialize: boolean;
   bundledCode: string;
   logs: Message[];
   isEditorPaneOpen: boolean;

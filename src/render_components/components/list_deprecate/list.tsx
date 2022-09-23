@@ -67,11 +67,9 @@ export const ListDeprecate: React.FC<IListDeprecateProps> & { Item: React.FC<ILi
         return React.cloneElement(child, {
           onMouseOver: (e: React.MouseEvent) => {
             props.onMouseOver && props.onMouseOver(e);
-            // onHoverListItem(e);
           },
           onMouseOut: (e: React.MouseEvent) => {
             props.onMouseOut && props.onMouseOut(e);
-            // onOutListItem(e);
           },
           onClick(e: React.MouseEvent) {
             if (child.props.disabled) {
@@ -150,7 +148,6 @@ export const ListDeprecate: React.FC<IListDeprecateProps> & { Item: React.FC<ILi
   </WrapperDiv>;
 };
 
-// FIXME: line color
 const Item: React.FC<any> = (props) => {
   const { currentIndex, children, className, ...rest } = props;
 
