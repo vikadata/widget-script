@@ -14,10 +14,8 @@ const initEsbuild = async () => {
 			});
 		}
 		await service;
-	} catch (err: any) {
-		if (!err.toString().includes('Cannot call "initialize" more than once')) {
-			throw err;
-		}
+	} catch (err) {
+		throw err;
 	}
 }
 
@@ -25,6 +23,7 @@ export const bundler = async(code: string) => {
   if (!code) return '';
   
   try {
+    console.time('Bundling time spent')
     await initEsbuild();
 
     const result = await esbuild.build({
@@ -36,8 +35,7 @@ export const bundler = async(code: string) => {
         fetchPlugin(code)
       ],
       format: 'cjs',
-      // sourcemap: true,
-      // minify: true,
+      minify: true,
       target: 'es2016',
       define: {
         'process.env.NODE_ENV': '"production"',
@@ -46,6 +44,7 @@ export const bundler = async(code: string) => {
     });
 
     const res = result.outputFiles?.[0].text || '';
+    console.timeEnd('Bundling time spent')
     return res;
   } catch (error) {
     console.log(error);

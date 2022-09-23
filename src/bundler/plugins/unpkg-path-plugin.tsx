@@ -1,7 +1,7 @@
 import * as esbuild from 'esbuild-wasm'
 import { CDN_URL } from '../index';
 
-const RESOLVE_NAMESPACE = "vika-script-plugin";
+const RESOLVE_NAMESPACE = "script-plugin";
 
 export const unpkgPathPlugin = (inputCode: string) => {
 	return {
@@ -12,8 +12,8 @@ export const unpkgPathPlugin = (inputCode: string) => {
 				return { 
 					path: 'index.js', 
 					namespace: RESOLVE_NAMESPACE 
-				}
-			})
+				};
+			});
 
 			// 处理相对路径
 			build.onResolve({ filter: /^\.+\// }, (args: any) => {
@@ -22,16 +22,16 @@ export const unpkgPathPlugin = (inputCode: string) => {
 				return {
 					path: url.href,
 					namespace: RESOLVE_NAMESPACE,
-				}
-			})
+				};
+			});
 
 			// 处理引入的文件
 			build.onResolve({ filter: /.*/ }, async (args: any) => {
 				return {
 					namespace: RESOLVE_NAMESPACE,
 					path: `${CDN_URL}/${args.path}`,
-				}
-			})
+				};
+			});
 		},
 	}
 }
