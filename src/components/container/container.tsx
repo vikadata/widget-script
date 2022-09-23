@@ -1,17 +1,22 @@
 import { Allotment } from 'allotment';
 import { shallowEqual } from 'react-redux';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 import { useCloudStorage, useViewport } from '@vikadata/widget-sdk';
 import { EditorPanel, PreviewPanel, ConsolePanel, DocumentPanel, Header, WelcomePanel } from '../../components';
 import { editorState, useSelector } from '../../store';
+import { 
+  ATTACH_PANEL_MAX_HEIGHT, 
+  ATTACH_PANEL_MIN_HEIGHT, 
+  ATTACH_PANEL_DEFAULT_SIZES, 
+  EDITOR_INITIAL_CODE, 
+  EDITOR_PANEL_MIN_HEIGHT,
+} from './constant';
 import "allotment/dist/style.css";
 import "./style.css";
 
-const INITIAL_CODE = `output.text('Hello World');`;
-
-export const Container: React.FC = () => {
+export const Container: FC = () => {
   const { isFullscreen } = useViewport();
-  const [sourceCode, setSourceCode] = useCloudStorage('scriptData', INITIAL_CODE);
+  const [sourceCode, setSourceCode] = useCloudStorage('scriptData', EDITOR_INITIAL_CODE);
   const [inputCode, setInputCode] = useState(sourceCode);
   const { 
     isEditorPaneOpen, 
@@ -41,11 +46,11 @@ export const Container: React.FC = () => {
             <Allotment 
               vertical 
               onVisibleChange={function noRefCheck() {}} 
-              defaultSizes={[600, 400]}
+              defaultSizes={ATTACH_PANEL_DEFAULT_SIZES}
               className={'allotment'}
             >
               {/* 代码编辑器 */}
-              <Allotment.Pane minSize={100}>
+              <Allotment.Pane minSize={EDITOR_PANEL_MIN_HEIGHT}>
                 <EditorPanel 
                   code={inputCode}
                   onChange={(value) => setInputCode(value)} 
@@ -54,8 +59,8 @@ export const Container: React.FC = () => {
 
               {/* API 文档 */}
               <Allotment.Pane 
-                minSize={36}
-                maxSize={isDocumentPaneOpen ? 520 : 36} 
+                minSize={ATTACH_PANEL_MIN_HEIGHT}
+                maxSize={isDocumentPaneOpen ? ATTACH_PANEL_MAX_HEIGHT : ATTACH_PANEL_MIN_HEIGHT} 
               >
                 <DocumentPanel />
               </Allotment.Pane>
@@ -67,7 +72,7 @@ export const Container: React.FC = () => {
             <Allotment 
               vertical 
               onVisibleChange={function noRefCheck() {}} 
-              defaultSizes={[600, 400]}
+              defaultSizes={ATTACH_PANEL_DEFAULT_SIZES}
             >
               {/* 预览区 */}
               <Allotment.Pane>
@@ -87,8 +92,8 @@ export const Container: React.FC = () => {
 
               {/* console 面板 */}
               <Allotment.Pane
-                minSize={36}
-                maxSize={isConsolePaneOpen ? 520 : 36}
+                minSize={ATTACH_PANEL_MIN_HEIGHT}
+                maxSize={isConsolePaneOpen ? ATTACH_PANEL_MAX_HEIGHT : ATTACH_PANEL_MIN_HEIGHT}
               >
                 <ConsolePanel />
               </Allotment.Pane>
