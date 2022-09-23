@@ -4,7 +4,7 @@ import { t } from '@vikadata/widget-sdk';
 import { useTheme } from '@vikadata/components';
 import { ChevronDownOutlined, ChevronUpOutlined, ColumnLinktableFilled } from '@vikadata/icons';
 import { editorState, toggleDocumentPane, useDispatch, useSelector } from '../../store';
-import { Strings } from '../../render_components';
+import { Strings } from '../../utils';
 import { 
   Container,
   Iframe

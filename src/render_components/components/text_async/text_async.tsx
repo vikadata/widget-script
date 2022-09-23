@@ -3,7 +3,7 @@ import { useMount } from 'ahooks';
 import { t } from '@vikadata/widget-sdk';
 import { useTheme } from '@vikadata/components';
 import { StyleSheetManager } from 'styled-components';
-import { Strings } from '../../i18n';
+import { Strings } from '../../../utils';
 import {
   Label,
   Content,

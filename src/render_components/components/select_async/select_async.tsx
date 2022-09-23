@@ -4,7 +4,7 @@ import { t } from '@vikadata/widget-sdk';
 import { useTheme } from '@vikadata/components';
 import { StyleSheetManager } from 'styled-components';
 import { Datasheet } from '@vikadata/widget-sdk/dist/script/datasheet';
-import { Strings } from '../../i18n';
+import { Strings } from '../../../utils';
 import {
   Label,
   Content,

@@ -4,7 +4,7 @@ import { useTheme } from "@vikadata/components";
 import { t, useMeta } from "@vikadata/widget-sdk";
 import { ChevronDownOutlined, ChevronUpOutlined, ClearOutlined } from '@vikadata/icons';
 import { clearLogs, editorState, toggleConsolePane, useDispatch, useSelector } from "../../store";
-import { Strings } from "../../render_components";
+import { Strings } from "../../utils";
 import { 
   Container,
   Header,

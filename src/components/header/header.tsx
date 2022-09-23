@@ -4,7 +4,7 @@ import { t, useViewport } from '@vikadata/widget-sdk';
 import { CollapseOutlined, ExpandOutlined } from '@vikadata/icons'
 import { useDispatch, updateBundledCode, toggleEditorPane, updateRunningState } from '../../store';
 import { bundler } from '../../bundler';
-import { Strings } from '../../render_components';
+import { Strings } from '../../utils';
 import { Container, ToggleButton } from './styled';
 
 interface IHeaderProps {

@@ -8,7 +8,7 @@ import { Record } from '@vikadata/widget-sdk/dist/script/record';
 import { Datasheet } from '@vikadata/widget-sdk/dist/script/datasheet';
 import { IContentWindow } from '../../render_base';
 import { TComponent } from '../t_component';
-import { Strings } from '../../i18n';
+import { Strings } from '../../../utils';
 import { Button } from '../button';
 import {
   Label,

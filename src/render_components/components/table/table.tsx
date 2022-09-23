@@ -3,7 +3,7 @@ import React, { FC, useMemo } from 'react';
 import { BaseTable } from 'ali-react-table';
 import { StyleSheetManager } from 'styled-components';
 import { IContentWindow } from '../../render_base';
-import { Strings } from '../../i18n';
+import { Strings } from '../../../utils';
 import { t } from '@vikadata/widget-sdk';
 
 interface ITableProps {
