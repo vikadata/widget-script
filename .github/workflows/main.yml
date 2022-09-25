@@ -68,7 +68,7 @@ jobs:
         npx -y @vikadata/widget-cli submit --version ${{steps.version.outputs.value}} --host ${{ secrets.VIKA_PRODUCTION_HOST }} --token ${{ secrets.VIKA_PRODUCTION_API_TOKEN }}
 
     - name: Push changes
-      uses: ad-m/github-push-action@main
+      uses: ad-m/github-push-action@mater
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
