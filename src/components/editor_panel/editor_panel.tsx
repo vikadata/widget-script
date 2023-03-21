@@ -71,7 +71,6 @@ export const EditorPanel = (props) => {
       onMount={onEditorDidMount}
       loading={<Loading />}
       options={{
-        // 迷你地图
         minimap: {
         	enabled: false,
         },

@@ -7,7 +7,7 @@ export const unpkgPathPlugin = (inputCode: string) => {
 	return {
 		name: 'unpkg-path-plugin',
 		setup(build: esbuild.PluginBuild) {
-			// 处理入口文件
+			// process the entry file
 			build.onResolve({ filter: /(^index\.js$)/ }, (args: any) => {
 				return { 
 					path: 'index.js', 
@@ -15,7 +15,7 @@ export const unpkgPathPlugin = (inputCode: string) => {
 				};
 			});
 
-			// 处理相对路径
+			// handle relative paths
 			build.onResolve({ filter: /^\.+\// }, (args: any) => {
 				const url = new URL(args.path, `${CDN_URL}${args.resolveDir}/`)
 
@@ -25,7 +25,7 @@ export const unpkgPathPlugin = (inputCode: string) => {
 				};
 			});
 
-			// 处理引入的文件
+			// process imported files
 			build.onResolve({ filter: /.*/ }, async (args: any) => {
 				return {
 					namespace: RESOLVE_NAMESPACE,

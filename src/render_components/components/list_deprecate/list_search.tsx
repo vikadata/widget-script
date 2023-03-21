@@ -22,7 +22,7 @@ export const ListSearch = (props: any) => {
       onPressEnter={onPressEnter}
       onChange={changInput}
       value={keyword}
-      placeholder={placeholder || '搜索'}
+      placeholder={placeholder || 'Search'}
       ref={inputRef}
     />
   </StyledSearchInputWrapper>;

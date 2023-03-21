@@ -45,8 +45,8 @@
           "UPPER_CASE",
           "PascalCase"
         ],
-        "leadingUnderscore": "allow", // 变量名以 _ 开头
-        "trailingUnderscore": "forbid" // 变量名以 _ 结尾
+        "leadingUnderscore": "allow",
+        "trailingUnderscore": "forbid"
       },
       {
         "selector": "parameter",

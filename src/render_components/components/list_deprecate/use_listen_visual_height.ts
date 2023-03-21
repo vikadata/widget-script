@@ -26,8 +26,6 @@ interface IUseListenVisualHeightProps {
 export interface IConfig {
   configMaxHeight?: number;
   configTriggerInfo?: IUseListenTriggerInfo;
-  // 是否计算过程中传入新的值？
-  // configChildNode?: React.MutableRefObject<HTMLElement | null>;
 }
 
 export function useListenVisualHeight(props: IUseListenVisualHeightProps) {
@@ -42,7 +40,7 @@ export function useListenVisualHeight(props: IUseListenVisualHeightProps) {
     minHeight,
     maxHeight,
     triggerInfo,
-    containerAdjust = false, // 如有 trigger， 以trigger 为准
+    containerAdjust = false,
     showScrollColor = true,
     showOnParent = true,
     position = 'absolute',
@@ -51,7 +49,6 @@ export function useListenVisualHeight(props: IUseListenVisualHeightProps) {
     subOffsetY = 12,
   } = props;
   const [height, setHeight] = useState<number | string>();
-  // const [cacheHeight, setCacheHeight] = useState<number>();
 
   const toggleScorllColor = (scrollEle: HTMLElement, height?: number | string) => {
     if (!scrollEle) return;
@@ -59,7 +56,6 @@ export function useListenVisualHeight(props: IUseListenVisualHeightProps) {
 
     const styleNode = showOnParent ? (scrollEle.parentElement || scrollEle) : scrollEle;
     const positionValue = position.includes('relative') ? 'relative' : position;
-    // height === 'auto'
     if (typeof height === 'string') {
       if (onScroll) {
         onScroll({ scrollTop, height: clientHeight, scrollHeight });
@@ -72,19 +68,16 @@ export function useListenVisualHeight(props: IUseListenVisualHeightProps) {
 
     const calcHeight = height || clientHeight;
 
-    // 自定义滚动
     if (onScroll) {
       onScroll({ scrollTop, height: calcHeight, scrollHeight });
       return;
     }
 
     if (scrollTop + calcHeight > scrollHeight - 10) {
-      // 屏蔽可滚动样式
       styleNode.classList.remove(`scroll-color-${position}`);
       styleNode.style.position = positionValue;
       return;
     }
-    // 展示可滚动样式
     if (styleNode.classList.contains(`scroll-color-${position}`)) {
       return;
     }
@@ -116,16 +109,8 @@ export function useListenVisualHeight(props: IUseListenVisualHeightProps) {
     const restBottomSpaceHeight = window.innerHeight - actualBottom - triggerHeight;
     let restSpaceHeight = useTopSpace ? Math.max(restTopSpaceHeight, restBottomSpaceHeight) : restTopSpaceHeight;
 
-    // 保留计算过程中传入新值的写法作为备用
-    // const needCalcChild = props?.configChildNode?.current || childNode?.current;
-    // if (needCalcChild) {
-    //   const childEle = needCalcChild;
     if (childNode?.current) {
       const childEle = childNode.current;
-
-      /**
-       * 使用 clone 方式计算容器滚动节点的高度
-       */
       const cloneNode = ele.cloneNode(true) as HTMLElement;
       const childList = Array.from(ele.childNodes);
       const index = childList.findIndex((v) => v === childEle || v.contains(childEle));

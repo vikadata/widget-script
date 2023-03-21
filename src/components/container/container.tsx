@@ -49,7 +49,6 @@ export const Container: FC = () => {
               defaultSizes={ATTACH_PANEL_DEFAULT_SIZES}
               className={'allotment'}
             >
-              {/* 代码编辑器 */}
               <Allotment.Pane minSize={EDITOR_PANEL_MIN_HEIGHT}>
                 <EditorPanel 
                   code={inputCode}
@@ -57,7 +56,6 @@ export const Container: FC = () => {
                 />
               </Allotment.Pane>
 
-              {/* API 文档 */}
               <Allotment.Pane 
                 minSize={ATTACH_PANEL_MIN_HEIGHT}
                 maxSize={isDocumentPaneOpen ? ATTACH_PANEL_MAX_HEIGHT : ATTACH_PANEL_MIN_HEIGHT} 
@@ -74,7 +72,6 @@ export const Container: FC = () => {
               onVisibleChange={function noRefCheck() {}} 
               defaultSizes={ATTACH_PANEL_DEFAULT_SIZES}
             >
-              {/* 预览区 */}
               <Allotment.Pane>
                 <div 
                   style={{
@@ -90,7 +87,6 @@ export const Container: FC = () => {
                 </div>
               </Allotment.Pane>
 
-              {/* console 面板 */}
               <Allotment.Pane
                 minSize={ATTACH_PANEL_MIN_HEIGHT}
                 maxSize={isConsolePaneOpen ? ATTACH_PANEL_MAX_HEIGHT : ATTACH_PANEL_MIN_HEIGHT}

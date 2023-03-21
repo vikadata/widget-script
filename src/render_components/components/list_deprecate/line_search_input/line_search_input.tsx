@@ -46,7 +46,7 @@ export const LineSearchInputBase: React.ForwardRefRenderFunction<{}, ILineSearch
       onFocus={onFocus}
       onChange={onChange}
       value={value}
-      placeholder={placeholder || '搜索'}
+      placeholder={placeholder || 'Search'}
       size={1}
     />
     <SuffixIcon onClick={onCancelClick}>

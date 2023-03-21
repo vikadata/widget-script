@@ -9,7 +9,7 @@ import { FootWrapper, ResultSpan, StyledListItem, StyledListWrapper, WrapperDiv 
 
 export const ListDeprecate: React.FC<IListDeprecateProps> & { Item: React.FC<IListItemProps> } = (props) => {
   const {
-    children, noDataTip = '空数据', activeIndex: DraftActiveIndex,
+    children, noDataTip = 'Empty', activeIndex: DraftActiveIndex,
     footerComponent, onClick, className,
     searchProps, triggerInfo, autoHeight = false
   } = props;
@@ -120,11 +120,9 @@ export const ListDeprecate: React.FC<IListDeprecateProps> & { Item: React.FC<ILi
     onKeyDown={keydownForContainer}
     className={className}
   >
-    {/* 搜索部分 */}
     {
       searchProps && <ListSearch setKeyword={setKeyword} keyword={keyword} {...searchProps} />
     }
-    {/* 列表部分 */}
     {
       (showNoDataTip || showNoSearchResult) && <ResultSpan>
         {

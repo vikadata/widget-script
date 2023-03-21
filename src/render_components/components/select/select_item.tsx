@@ -9,19 +9,13 @@ export const SelectItem: React.FC<{ item: IOption; isChecked?: boolean } & Requi
   const { item, children, renderValue, isChecked } = props;
 
   const getEllipsisConfig = () => {
-    /**
-     * https://git.vika.ltd/fe/datasheet/-/commit/ec01a66
-     * 如果直接屏蔽 disabledTip，会导致 disabled 的原因无法显示，所以这里改成先判断 disabled
-     */
     if (!item.disabled) {
       return { tooltip: '' };
     }
-    // 需要提示 disabled 的理由
     if (item.disabled && item.disabledTip) {
       return { tooltip: item.disabledTip };
     }
 
-    // 显示搜索结果
     if (children) {
       return { rows: 1, tooltip: item.label };
     }
