@@ -9,8 +9,8 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: var(--bgCommonDefault);
-  border-top: 1px solid var(--borderCommon);
-  border-bottom: 1px solid var(--borderCommon);
+  border-top: 1px solid var(--borderCommonDefault);
+  border-bottom: 1px solid var(--borderCommonDefault);
 `;
 
 export const ToggleButton = styled(Button)`

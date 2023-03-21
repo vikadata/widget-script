@@ -66,9 +66,9 @@ export const ConsolePanel = memo(() => {
             LOG_COLOR: color.textCommonPrimary,
             LOG_WARN_BACKGROUND: color.bgWarnLightDefault,
             LOG_ERROR_BACKGROUND: color.bgDangerLightDefault,
-            LOG_BORDER: color.borderCommon,
-            LOG_WARN_BORDER: color.borderCommon,
-            LOG_ERROR_BORDER: color.borderCommon,
+            LOG_BORDER: color.borderCommonDefault,
+            LOG_WARN_BORDER: color.borderCommonDefault,
+            LOG_ERROR_BORDER: color.borderCommonDefault,
             LOG_ICON_HEIGHT: 22,
           }}
           logs={logs}

@@ -12,7 +12,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: var(--bgCommonDefault);
-  border-bottom: 1px solid var(--borderCommon);
+  border-bottom: 1px solid var(--borderCommonDefault);
 `;
 
 export const Title = styled.div`
