@@ -4,6 +4,7 @@ import { t } from '@vikadata/widget-sdk';
 import { useTheme } from '@vikadata/components';
 import { ChevronDownOutlined, ChevronUpOutlined, ColumnLinktableFilled } from '@vikadata/icons';
 import { editorState, toggleDocumentPane, useDispatch, useSelector } from '../../store';
+import Settings from '../../settings.json';
 import { Strings } from '../../utils';
 import { 
   Container,
@@ -16,8 +17,6 @@ import {
   IconWrapper,
   Content,
 } from '../console_panel/styled';
-
-const DOCUMENT_URL = 'https://docs-script-document.developers-6w5.pages.dev/script/introduction/';
 
 export const DocumentPanel = () => {
   const { isDocumentPaneOpen } = useSelector(editorState, shallowEqual);
@@ -33,7 +32,7 @@ export const DocumentPanel = () => {
 
   const onOpen = (e) => {
     e.stopPropagation()
-    window.open(DOCUMENT_URL, '_blank')
+    window.open(Settings.help_document_url, '_blank')
   }
 
   return (
@@ -59,7 +58,7 @@ export const DocumentPanel = () => {
         <Iframe
           ref={iframeRef}
           title="users-html"
-          src={DOCUMENT_URL}
+          src={Settings.help_document_url}
           sandbox="allow-same-origin allow-scripts"
           frameBorder={'none'}
         />
