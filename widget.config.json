@@ -17,5 +17,6 @@
     "zh-CN": "通过编写简短的脚本，来减少重复任务所花费的时间，实现快捷的自定义能力",
     "en-US": "Reduce the time spent on repetitive tasks by writing short scripts for quick customization capabilities"
   },
+  "website": "https://developers.vika.cn/",
   "sandbox": true
 }
