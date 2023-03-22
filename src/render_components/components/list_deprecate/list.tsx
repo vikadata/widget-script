@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { stopPropagation,  } from '@vikadata/components';
+import { stopPropagation,  } from '@apitable/components';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ListSearch } from './list_search';
 import { IListDeprecateProps, IListItemProps } from './interface';

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { IOption, ISelectProps } from '@vikadata/components';
+import { IOption, ISelectProps } from '@apitable/components';
 import { Typography } from '../typography';
 
 type IRenderValue = Pick<ISelectProps, 'renderValue'>;

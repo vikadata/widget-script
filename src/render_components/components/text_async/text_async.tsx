@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useMount } from 'ahooks';
-import { t } from '@vikadata/widget-sdk';
-import { useTheme } from '@vikadata/components';
+import { t } from '@apitable/widget-sdk';
+import { useTheme } from '@apitable/components';
 import { StyleSheetManager } from 'styled-components';
 import { Strings } from '../../../utils';
 import {

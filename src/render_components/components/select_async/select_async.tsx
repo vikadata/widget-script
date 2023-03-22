@@ -1,9 +1,9 @@
 import React, { FC, useMemo, useState } from 'react';
 import { useMount } from 'ahooks';
-import { t } from '@vikadata/widget-sdk';
-import { useTheme } from '@vikadata/components';
+import { t } from '@apitable/widget-sdk';
+import { useTheme } from '@apitable/components';
 import { StyleSheetManager } from 'styled-components';
-import { Datasheet } from '@vikadata/widget-sdk/dist/script/datasheet';
+import { Datasheet } from '@apitable/widget-sdk/dist/script/datasheet';
 import { Strings } from '../../../utils';
 import {
   Label,
@@ -12,8 +12,8 @@ import {
 } from '../text_async/styled';
 import { IContentWindow } from '../../render_base';
 import { Select } from '../select';
-import { Field } from '@vikadata/widget-sdk/dist/script/field';
-import { View } from '@vikadata/widget-sdk/dist/script/view';
+import { Field } from '@apitable/widget-sdk/dist/script/field';
+import { View } from '@apitable/widget-sdk/dist/script/view';
 
 export enum RenderType {
   Field = 'Field',

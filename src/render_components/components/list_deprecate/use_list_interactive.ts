@@ -1,4 +1,4 @@
-import { IUseSelectProps, useSelectIndex } from '@vikadata/components';
+import { IUseSelectProps, useSelectIndex } from '@apitable/components';
 
 interface IUseListInteractive {
   activeItemClass: string;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { IWrapperDivProps } from './interface';
-import { applyDefaultTheme } from '@vikadata/components';
+import { applyDefaultTheme } from '@apitable/components';
 
 const INPUT_SIZE = {
   small: '24px',

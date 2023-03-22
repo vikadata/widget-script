@@ -1,8 +1,8 @@
 import React, { memo } from "react";
 import { Console } from 'console-feed';
-import { useTheme } from "@vikadata/components";
-import { t, useMeta } from "@vikadata/widget-sdk";
-import { ChevronDownOutlined, ChevronUpOutlined, ClearOutlined } from '@vikadata/icons';
+import { useTheme } from "@apitable/components";
+import { t, useMeta } from "@apitable/widget-sdk";
+import { ChevronDownOutlined, ChevronUpOutlined, ClearOutlined } from '@apitable/icons';
 import { clearLogs, editorState, toggleConsolePane, useDispatch, useSelector } from "../../store";
 import { Strings } from "../../utils";
 import { 

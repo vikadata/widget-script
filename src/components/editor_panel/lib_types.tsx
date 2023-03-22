@@ -14,11 +14,11 @@ import lodashString from '!raw-loader!@types/lodash/common/string.d.ts';
 import lodashUtil from '!raw-loader!@types/lodash/common/util.d.ts';
 
 // Script API
-import space from '!raw-loader!@vikadata/widget-sdk/dist/script/space.d.ts';
-import datasheetTyping from '!raw-loader!@vikadata/widget-sdk/dist/script/datasheet.d.ts';
-import viewTyping from '!raw-loader!@vikadata/widget-sdk/dist/script/view.d.ts';
-import fieldTyping from '!raw-loader!@vikadata/widget-sdk/dist/script/field.d.ts';
-import recordTyping from '!raw-loader!@vikadata/widget-sdk/dist/script/record.d.ts';
+import space from '!raw-loader!@apitable/widget-sdk/dist/script/space.d.ts';
+import datasheetTyping from '!raw-loader!@apitable/widget-sdk/dist/script/datasheet.d.ts';
+import viewTyping from '!raw-loader!@apitable/widget-sdk/dist/script/view.d.ts';
+import fieldTyping from '!raw-loader!@apitable/widget-sdk/dist/script/field.d.ts';
+import recordTyping from '!raw-loader!@apitable/widget-sdk/dist/script/record.d.ts';
 
 // Render API
 import input from '!raw-loader!../../render_components/input.interface.ts';

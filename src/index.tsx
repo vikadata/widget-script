@@ -1,5 +1,5 @@
 import React from 'react';
-import { initializeWidget } from '@vikadata/widget-sdk';
+import { initializeWidget } from '@apitable/widget-sdk';
 import { store } from './store';
 import { Provider } from 'react-redux';
 import { Container } from './components';

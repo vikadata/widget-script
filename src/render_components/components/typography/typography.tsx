@@ -1,5 +1,5 @@
 import React, { FC, useRef } from 'react';
-import { IEllipsis, ITypographyProps } from '@vikadata/components';
+import { IEllipsis, ITypographyProps } from '@apitable/components';
 import { TypographyBase } from './styled';
 import classNames from 'classnames';
 

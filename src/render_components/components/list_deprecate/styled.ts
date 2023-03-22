@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { applyDefaultTheme, IOption } from '@vikadata/components';
+import { applyDefaultTheme, IOption } from '@apitable/components';
 import { Typography } from '../typography';
 
 export const StyledItemContainer = styled.div.attrs(applyDefaultTheme) <IOption & { height: number }>`

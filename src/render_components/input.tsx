@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from '@vikadata/widget-sdk/dist/script/view';
-import { Field } from '@vikadata/widget-sdk/dist/script/field';
-import { Record } from '@vikadata/widget-sdk/dist/script/record';
-import { Datasheet } from '@vikadata/widget-sdk/dist/script/datasheet';
+import { View } from '@apitable/widget-sdk/dist/script/view';
+import { Field } from '@apitable/widget-sdk/dist/script/field';
+import { Record } from '@apitable/widget-sdk/dist/script/record';
+import { Datasheet } from '@apitable/widget-sdk/dist/script/datasheet';
 import { Input } from './input.interface';
 import { IContentWindow, RenderBase } from './render_base';
 import { TextAsync, SelectAsync, RenderType, RecordAsync } from './components';

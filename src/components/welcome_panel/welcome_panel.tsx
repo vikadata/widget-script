@@ -1,6 +1,6 @@
 import React from 'react';
-import { t } from '@vikadata/widget-sdk';
-import { Button } from '@vikadata/components';
+import { t } from '@apitable/widget-sdk';
+import { Button } from '@apitable/components';
 import { Strings } from '../../utils';
 import { bundler } from '../../bundler';
 import { generateInputCode } from '../header';

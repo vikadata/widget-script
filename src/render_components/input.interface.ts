@@ -1,7 +1,7 @@
-import { View } from "@vikadata/widget-sdk/dist/script/view";
-import { Field } from "@vikadata/widget-sdk/dist/script/field";
-import { Record } from "@vikadata/widget-sdk/dist/script/record";
-import { Datasheet } from "@vikadata/widget-sdk/dist/script/datasheet";
+import { View } from "@apitable/widget-sdk/dist/script/view";
+import { Field } from "@apitable/widget-sdk/dist/script/field";
+import { Record } from "@apitable/widget-sdk/dist/script/record";
+import { Datasheet } from "@apitable/widget-sdk/dist/script/datasheet";
 
 type SelectAsync<T> = (label: string, datasheet: Datasheet) => Promise<T>
 

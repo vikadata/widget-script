@@ -1,5 +1,5 @@
 import React from 'react';
-import { IButtonProps, getCurrentColorIcon } from '@vikadata/components';
+import { IButtonProps, getCurrentColorIcon } from '@apitable/components';
 import { ButtonBase, IconSpanStyled, TextSpanStyled } from './styled';
 
 export const Button = React.forwardRef(({

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { getNextShadeColor, getContrastText, applyDefaultTheme, IButtonBaseProps, IButtonType } from '@vikadata/components';
+import { getNextShadeColor, getContrastText, applyDefaultTheme, IButtonBaseProps, IButtonType } from '@apitable/components';
 
 export const IconSpanStyled = styled.span<{ existIcon: boolean; position: string }>`
   display:inline-block;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { applyDefaultTheme, IOption } from '@vikadata/components';
+import { applyDefaultTheme, IOption } from '@apitable/components';
 import { Typography } from '../typography';
 
 const CssItem = css<Pick<IOption, 'disabled' | 'prefixIcon' | 'suffixIcon'>>`

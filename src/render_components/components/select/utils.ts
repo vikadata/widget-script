@@ -1,6 +1,6 @@
 import React from 'react';
 import { isFragment } from 'react-is';
-import { IOption } from '@vikadata/components';
+import { IOption } from '@apitable/components';
 
 export default function toArray(
   children: React.ReactNode,

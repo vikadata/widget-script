@@ -2,8 +2,8 @@ import { useDebounceFn } from 'ahooks';
 import { editor } from 'monaco-editor';
 import React, { useEffect, useRef } from 'react';
 import MonacoEditor, { OnMount, useMonaco } from '@monaco-editor/react'
-import { useMeta } from '@vikadata/widget-sdk';
-import { Loading, useTheme, rgba2hex, ThemeName } from "@vikadata/components";
+import { useMeta } from '@apitable/widget-sdk';
+import { Loading, useTheme, rgba2hex, ThemeName } from "@apitable/components";
 import { allTypes } from './lib_types';
 import './style.css';
 

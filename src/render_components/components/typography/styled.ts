@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { applyDefaultTheme, fontVariants, ITypographyProps } from '@vikadata/components';
+import { applyDefaultTheme, fontVariants, ITypographyProps } from '@apitable/components';
 
 export const TypographyBase = styled.div.attrs(applyDefaultTheme) <Required<ITypographyProps> & {
   cssTextOverflow: boolean, cssLineClamp: boolean, rows: number 

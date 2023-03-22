@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Button } from '@vikadata/components';
-import { t, useViewport } from '@vikadata/widget-sdk';
-import { CollapseOutlined, ExpandOutlined } from '@vikadata/icons'
+import { Button } from '@apitable/components';
+import { t, useViewport } from '@apitable/widget-sdk';
+import { CollapseOutlined, ExpandOutlined } from '@apitable/icons'
 import { useDispatch, updateBundledCode, toggleEditorPane, updateRunningState } from '../../store';
 import { bundler } from '../../bundler';
 import { Strings } from '../../utils';

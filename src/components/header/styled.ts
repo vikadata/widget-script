@@ -1,4 +1,4 @@
-import { Button } from '@vikadata/components';
+import { Button } from '@apitable/components';
 import styled from 'styled-components';
 
 export const Container = styled.header`

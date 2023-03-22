@@ -2,7 +2,7 @@ import Color from 'color';
 import classnames from 'classnames';
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { ITextInputProps, applyDefaultTheme, ITheme } from '@vikadata/components';
+import { ITextInputProps, applyDefaultTheme, ITheme } from '@apitable/components';
 
 const sizeHeightMap = {
   small: 32,

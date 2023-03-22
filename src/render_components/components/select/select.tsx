@@ -3,8 +3,8 @@ import Trigger from 'rc-trigger';
 import Highlighter from 'react-highlight-words';
 import { useClickAway, useToggle } from 'ahooks';
 import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
-import { ChevronDownOutlined } from '@vikadata/icons';
-import { IOption, ISelectProps, stopPropagation, useProviderTheme } from '@vikadata/components';
+import { ChevronDownOutlined } from '@apitable/icons';
+import { IOption, ISelectProps, stopPropagation, useProviderTheme } from '@apitable/components';
 import { SelectItem } from './select_item';
 import {
   GlobalStyle, hightLightCls, OptionOutside, StyledArrowIcon, 

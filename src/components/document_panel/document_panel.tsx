@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { shallowEqual } from 'react-redux';
-import { t } from '@vikadata/widget-sdk';
-import { useTheme } from '@vikadata/components';
-import { ChevronDownOutlined, ChevronUpOutlined, ColumnLinktableFilled } from '@vikadata/icons';
+import { t } from '@apitable/widget-sdk';
+import { useTheme } from '@apitable/components';
+import { ChevronDownOutlined, ChevronUpOutlined, ColumnLinktableFilled } from '@apitable/icons';
 import { editorState, toggleDocumentPane, useDispatch, useSelector } from '../../store';
-import Settings from '../../settings.json';
+import Settings from '../../../settings.json';
 import { Strings } from '../../utils';
 import { 
   Container,

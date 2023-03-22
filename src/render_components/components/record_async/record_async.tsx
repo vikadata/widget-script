@@ -1,11 +1,11 @@
 import React, { FC, useState } from 'react';
 import { useMount } from 'ahooks';
-import { t } from '@vikadata/widget-sdk';
-import { useTheme } from '@vikadata/components';
-import { ColumnLinktableFilled } from '@vikadata/icons';
+import { t } from '@apitable/widget-sdk';
+import { useTheme } from '@apitable/components';
+import { ColumnLinktableFilled } from '@apitable/icons';
 import { StyleSheetManager } from 'styled-components';
-import { Record } from '@vikadata/widget-sdk/dist/script/record';
-import { Datasheet } from '@vikadata/widget-sdk/dist/script/datasheet';
+import { Record } from '@apitable/widget-sdk/dist/script/record';
+import { Datasheet } from '@apitable/widget-sdk/dist/script/datasheet';
 import { IContentWindow } from '../../render_base';
 import { TComponent } from '../t_component';
 import { Strings } from '../../../utils';

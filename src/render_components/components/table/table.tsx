@@ -4,7 +4,7 @@ import { BaseTable } from 'ali-react-table';
 import { StyleSheetManager } from 'styled-components';
 import { IContentWindow } from '../../render_base';
 import { Strings } from '../../../utils';
-import { t } from '@vikadata/widget-sdk';
+import { t } from '@apitable/widget-sdk';
 
 interface ITableProps {
   data: (string | number | Object)[];

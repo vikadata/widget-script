@@ -1,7 +1,7 @@
 import { Hook } from 'console-feed';
 import { shallowEqual } from 'react-redux';
 import React, { useContext, useEffect, useRef } from 'react';
-import { IWidgetContext, widgetMessage } from '@vikadata/widget-sdk';
+import { IWidgetContext, widgetMessage } from '@apitable/widget-sdk';
 import { htmlTemplate } from './html_template';
 import { InputClass, OutputClass } from '../../render_components';
 import { editorState, updateLogs, updateRunningState, useDispatch, useSelector } from '../../store';
@@ -10,7 +10,7 @@ import { Container, Iframe } from './styled';
 export const PreviewPanel = () => {
   const dispatch = useDispatch();
   const { bundledCode, isRunning, isInitialize } = useSelector(editorState, shallowEqual);
-  const { WidgetContext, Script } = window['_@vikadata/widget-sdk'];
+  const { WidgetContext, Script } = window['_@apitable/widget-sdk'];
   const context = useContext<IWidgetContext>(WidgetContext);
   const iframeRef = useRef<any>();
 

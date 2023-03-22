@@ -1,7 +1,7 @@
 import { Allotment } from 'allotment';
 import { shallowEqual } from 'react-redux';
 import React, { useEffect, useState, FC } from 'react';
-import { useCloudStorage, useViewport } from '@vikadata/widget-sdk';
+import { useCloudStorage, useViewport } from '@apitable/widget-sdk';
 import { EditorPanel, PreviewPanel, ConsolePanel, DocumentPanel, Header, WelcomePanel } from '../../components';
 import { editorState, useSelector } from '../../store';
 import { 
