@@ -12,6 +12,8 @@ import {
 } from './styled';
 import { IListItemProps, IUseListenTriggerInfo, ListDeprecate } from '../list_deprecate';
 import { convertChildrenToData } from './utils';
+import { t } from '@apitable/widget-sdk';
+import { Strings } from '../../../utils';
 
 const _renderValue = (option: IOption) => {
   return option.label;
@@ -199,7 +201,7 @@ export const Select: FC<ISelectProps> & {
               renderValue={renderValue}
             /> :
               <span className={'placeholder ellipsis'}>
-                {placeholder || 'Please select an option'}
+                {placeholder || t(Strings.select_placeholder)}
               </span>
           }
         </StyledSelectedContainer>

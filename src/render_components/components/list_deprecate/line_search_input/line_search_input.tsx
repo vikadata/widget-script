@@ -4,6 +4,8 @@ import { useProviderTheme } from '@apitable/components'
 import { ILineSearchInputProps } from './interface';
 import { PrefixIcon, StyledSearchInputContainer, SuffixIcon } from './styled';
 import { useKeyPress } from 'ahooks';
+import { t } from '@apitable/widget-sdk';
+import { Strings } from '../../../../utils';
 
 export const LineSearchInputBase: React.ForwardRefRenderFunction<{}, ILineSearchInputProps> = (props, ref) => {
   const { onChange, value, onPressEnter, className, onFocus, size = 'default', placeholder, style, clearClick, showClearIcon } = props;
@@ -46,7 +48,7 @@ export const LineSearchInputBase: React.ForwardRefRenderFunction<{}, ILineSearch
       onFocus={onFocus}
       onChange={onChange}
       value={value}
-      placeholder={placeholder || 'Search'}
+      placeholder={placeholder || t(Strings.search)}
       size={1}
     />
     <SuffixIcon onClick={onCancelClick}>

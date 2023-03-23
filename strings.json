@@ -47,6 +47,14 @@
 		"script_select_record_by_sheet": {
 			"zh_CN": "选择「${datasheetName}」的记录",
 			"en_US": "Select records from ${datasheetName}"
+		},
+		"select_placeholder": {
+			"zh_CN": "请选择一个选项",
+			"en_US": "Please select an option"
+		},
+		"search": {
+			"zh_CN": "搜索",
+			"en_US": "Search"
 		}
   }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyledSearchInputWrapper } from './styled';
 import { LineSearchInput } from './line_search_input';
+import { t } from '@apitable/widget-sdk';
+import { Strings } from '../../../utils';
 
 export const ListSearch = (props: any) => {
   const { style, keyword, placeholder, inputRef, onSearchChange, setKeyword, onInputEnter } = props;
@@ -22,7 +24,7 @@ export const ListSearch = (props: any) => {
       onPressEnter={onPressEnter}
       onChange={changInput}
       value={keyword}
-      placeholder={placeholder || 'Search'}
+      placeholder={placeholder || t(Strings.search)}
       ref={inputRef}
     />
   </StyledSearchInputWrapper>;
