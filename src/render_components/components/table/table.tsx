@@ -1,10 +1,10 @@
 import { isObject } from 'lodash';
 import React, { FC, useMemo } from 'react';
-import { BaseTable } from 'ali-react-table';
 import { StyleSheetManager } from 'styled-components';
 import { IContentWindow } from '../../render_base';
 import { Strings } from '../../../utils';
 import { t } from '@apitable/widget-sdk';
+import { CustomBaseTable } from './styled';
 
 interface ITableProps {
   data: (string | number | Object)[];
@@ -51,7 +51,7 @@ export const Table: FC<ITableProps> = (props) => {
     <StyleSheetManager 
       target={window.document.head}
     >
-      <BaseTable 
+      <CustomBaseTable 
         dataSource={data}
         columns={columns}
         hasHeader={isItemObject}

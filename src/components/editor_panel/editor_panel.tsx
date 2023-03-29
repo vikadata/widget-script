@@ -24,12 +24,14 @@ export const EditorPanel = (props) => {
   const onEditorDidMount: OnMount = (editor, monaco) => {
 		editorRef.current = editor;
     const bgColor = rgba2hex(color.bgCommonLower);
+    const errorColor = rgba2hex(color.bgDangerDefault);
     monaco.editor.defineTheme("customTheme", {
       base: monacoTheme,
       inherit: true,
       rules: [{ background: bgColor, token: "" }],
       colors: {
         "editor.background": bgColor,
+        "editorError.foreground": errorColor,
       },
     });
     monaco.editor.setTheme("customTheme");
