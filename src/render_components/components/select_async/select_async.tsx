@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useState } from 'react';
 import { useMount } from 'ahooks';
 import { t } from '@apitable/widget-sdk';
-import { useTheme } from '@apitable/components';
+import { dark, useTheme, getThemeName, ThemeName, light, ThemeProvider } from '@apitable/components';
 import { StyleSheetManager } from 'styled-components';
 import { Datasheet } from '@apitable/widget-sdk/dist/script/datasheet';
 import { Strings } from '../../../utils';
@@ -33,11 +33,15 @@ type SelectAsyncProps<T = RenderType> = (
   T extends RenderType.Field ? ISelectAsyncBase<T, Field> : ISelectAsyncBase<T, View>
 );
 
+export const getThemeData = () => {
+  return getThemeName() === ThemeName.Dark ? dark : light;
+};
+
 export const SelectAsync: FC<SelectAsyncProps> = (props) => {
   const { id, name, nextFn, window, renderType, datasheet } = props;
   const [value, setValue] = useState('');
   const [disabled, setDisabled] = useState(false);
-  const { color } = useTheme() as any;
+  const { color } = useTheme();
 
   useMount(() => {
     window.componentMap.set(id, () => setDisabled(true));
@@ -87,11 +91,13 @@ export const SelectAsync: FC<SelectAsyncProps> = (props) => {
           />
           {
             !disabled &&
-            <Button 
-              onClick={onClick}
-            >
-              {t(Strings.script_next_step)}
-            </Button>
+            <ThemeProvider theme={dark}>
+              <Button 
+                onClick={onClick}
+              >
+                {t(Strings.script_next_step)}
+              </Button>
+            </ThemeProvider>
           }
         </Content>
       </div>

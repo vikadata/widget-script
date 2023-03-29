@@ -2,7 +2,8 @@ import Color from 'color';
 import classnames from 'classnames';
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { ITextInputProps, applyDefaultTheme, ITheme } from '@apitable/components';
+import { ITextInputProps, ITheme } from '@apitable/components';
+import { applyDefaultTheme } from '../utils';
 
 const sizeHeightMap = {
   small: 32,

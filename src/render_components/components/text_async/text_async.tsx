@@ -23,7 +23,7 @@ export const TextAsync: FC<ITextAsyncProps> = (props) => {
   const { id, name, nextFn, window } = props;
   const [value, setValue] = useState('');
   const [disabled, setDisabled] = useState(false);
-  const { color } = useTheme() as any;
+  const { color } = useTheme();
 
   useMount(() => {
     window.componentMap.set(id, () => setDisabled(true));

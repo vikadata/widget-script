@@ -1,5 +1,6 @@
+import { getNextShadeColor, getContrastText, IButtonBaseProps, IButtonType } from '@apitable/components';
 import styled, { css } from 'styled-components';
-import { getNextShadeColor, getContrastText, applyDefaultTheme, IButtonBaseProps, IButtonType } from '@apitable/components';
+import { applyDefaultTheme } from '../utils';
 
 export const IconSpanStyled = styled.span<{ existIcon: boolean; position: string }>`
   display:inline-block;
@@ -95,49 +96,75 @@ export const ButtonBase = styled.button.attrs(applyDefaultTheme) <IButtonBasePro
   ${(props) => {
     const {
       deepPurple,
-      red,
-      orange,
-      teal,
-      fc1,
-      fill0,
-      primaryLight,
-      primaryLightHover,
-      primaryLightActive,
-      staticWhite0,
-      primaryColor,
+      bgDangerDefault,
+      bgWarnDefault,
+      bgSuccessDefault,
+      textCommonPrimary,
+      bgControlsDefault,
+      bgBrandLightHover,
+      bgBrandLightActive,
+      textStaticPrimary,
+      textBrandDefault,
+      bgBrandLightDefault,
+      bgDangerLightDefault,
+      bgDangerLightHover,
+      bgDangerLightActive,
+      textDangerDefault,
+      bgWarnLightDefault,
+      bgWarnLightHover,
+      bgWarnLightActive,
+      textWarnDefault,
+      bgSuccessLightDefault,
+      bgSuccessLightHover,
+      bgSuccessLightActive,
+      textSuccessDefault,
+      bgBrandDefault
     } = props.theme.color;
     const getColor = (color: IButtonType | string) => {
       const colorMap: any = {
         default: {
-          fill: fill0,
-          jelly: primaryLight,
-          jellyHover: primaryLightHover,
-          jellyActive: primaryLightActive,
-          text: fc1,
+          fill: bgControlsDefault,
+          jelly: bgBrandLightDefault,
+          jellyHover: bgBrandLightHover,
+          jellyActive: bgBrandLightActive,
+          jellyText: textBrandDefault,
+          text: textCommonPrimary,
         },
         primary: {
-          fill: primaryColor,
-          jelly: primaryLight,
-          jellyHover: primaryLightHover,
-          jellyActive: primaryLightActive,
-          jellyText: primaryColor,
-          text: staticWhite0,
+          fill: textBrandDefault,
+          jelly: bgBrandLightDefault,
+          jellyHover: bgBrandLightHover,
+          jellyActive: bgBrandLightActive,
+          jellyText: textBrandDefault,
+          text: textStaticPrimary,
         },
         danger: {
-          fill: red[500],
-          jelly: red[50],
+          fill: bgDangerDefault,
+          jelly: bgDangerLightDefault,
+          jellyHover: bgDangerLightHover,
+          jellyActive: bgWarnLightActive,
+          jellyText: textWarnDefault,
         },
         warning: {
-          fill: orange[500],
-          jelly: orange[50],
+          fill: bgWarnDefault,
+          jelly: bgWarnLightDefault,
+          jellyHover: bgWarnLightHover,
+          jellyActive: bgDangerLightActive,
+          jellyText: textDangerDefault,
         },
         success: {
-          fill: teal[500],
-          jelly: teal[50]
+          fill: bgSuccessDefault,
+          jelly: bgSuccessLightDefault,
+          jellyHover: bgSuccessLightHover,
+          jellyActive: bgSuccessLightActive,
+          jellyText: textSuccessDefault,
         },
         confirm: {
           fill: deepPurple[500],
-          jelly: deepPurple[50],
+          jelly: bgBrandDefault,
+          jellyHover: bgBrandLightHover,
+          jellyActive: bgBrandLightActive,
+          jellyText: textSuccessDefault,
         },
       };
       const res = colorMap[color];
@@ -183,6 +210,7 @@ export const ButtonBase = styled.button.attrs(applyDefaultTheme) <IButtonBasePro
         activeBgColor = getColor(btnColor).jellyActive || getActiveColor(bgColor);
         break;
     }
+    // Disabled status cancel hover and active status ui changes
     if (props.disabled) {
       hoverBgColor = bgColor;
       activeBgColor = bgColor;

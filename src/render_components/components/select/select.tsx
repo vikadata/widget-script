@@ -4,7 +4,7 @@ import Highlighter from 'react-highlight-words';
 import { useClickAway, useToggle } from 'ahooks';
 import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronDownOutlined } from '@apitable/icons';
-import { IOption, ISelectProps, stopPropagation, useProviderTheme } from '@apitable/components';
+import { dark, IOption, ISelectProps, stopPropagation, useProviderTheme } from '@apitable/components';
 import { SelectItem } from './select_item';
 import {
   GlobalStyle, hightLightCls, OptionOutside, StyledArrowIcon, 
@@ -190,6 +190,7 @@ export const Select: FC<ISelectProps> & {
           disabled={Boolean(disabled || (selectedOption && selectedOption.disabled))}
           suffixIcon={suffixIcon || selectedOption?.suffixIcon}
           prefixIcon={prefixIcon || selectedOption?.prefixIcon}
+          theme={dark}
         >
           {
             value != null && selectedOption ? <SelectItem

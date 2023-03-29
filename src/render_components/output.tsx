@@ -1,6 +1,6 @@
 import React from 'react';
 import { Output } from './output.interface';
-import { Markdown, Table } from './components';
+import { Markdown, Table, Text } from './components';
 import { IContentWindow, RenderBase } from './render_base';
 
 export class OutputClass extends RenderBase implements Output {
@@ -10,7 +10,7 @@ export class OutputClass extends RenderBase implements Output {
 
   public text(name: string) {
     this.renderComponent(
-      <div>{name}</div>
+      <Text name={name} />
     );
   }
 

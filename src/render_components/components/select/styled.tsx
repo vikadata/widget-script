@@ -1,7 +1,7 @@
-import React from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { applyDefaultTheme, IOption } from '@apitable/components';
-import { Typography } from '../typography';
+import { IOption } from '@apitable/components';
+import { ListDeprecate } from '../list_deprecate';
+import { applyDefaultTheme } from '../utils';
 
 const CssItem = css<Pick<IOption, 'disabled' | 'prefixIcon' | 'suffixIcon'>>`
   position: relative;
@@ -38,7 +38,6 @@ const CssItem = css<Pick<IOption, 'disabled' | 'prefixIcon' | 'suffixIcon'>>`
     vertical-align: -0.225em;
   }
 
-
   .suffixIcon,
   .prefixIcon {
     height: 100%;
@@ -58,11 +57,10 @@ const CssItem = css<Pick<IOption, 'disabled' | 'prefixIcon' | 'suffixIcon'>>`
     &.isChecked {
       svg {
         fill: ${props => {
-    return props.theme.color.primaryColor;
-  }};
+          return props.theme.color.primaryColor;
+        }};
       }
     }
-
   }
 
   .optionLabel {
@@ -74,8 +72,8 @@ const CssItem = css<Pick<IOption, 'disabled' | 'prefixIcon' | 'suffixIcon'>>`
 
     &.isChecked {
       color: ${props => {
-    return props.theme.color.primaryColor;
-  }};
+        return props.theme.color.primaryColor;
+      }};
     }
   }
 `;
@@ -199,48 +197,8 @@ export const StyledListContainer = styled.div.attrs(applyDefaultTheme) <{ width:
   border-radius: 4px;
 `;
 
-export const StyledListItem = styled(Typography).attrs(applyDefaultTheme)<{ disabled?: boolean }>`
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  height: 40px;
-  padding: 0 8px;
+export const OptionOutside = styled(ListDeprecate.Item).attrs(applyDefaultTheme)`
 
-  @media (any-hover: hover) {
-    ${(props) => {
-    return !props.disabled && css`
-        &:hover {
-          ${props => css`background: ${props.theme.color.fc6};`}
-          border-radius: 8px;
-        }
-      `;
-    }}
-  }
-
-  @media screen and(max-width: 768px) {
-    height: 48px;
-    line-height: 48px;
-    border-bottom: 1px solid #eee;
-  }
-`;
-
-const ListItem: React.FC<any> = (props) => {
-  const { currentIndex, children, className, ...rest } = props;
-
-  return <StyledListItem
-    role={'option'}
-    data-tab-index={currentIndex}
-    className={className}
-    {...rest}
-    variant={'body2'}
-  >
-    {
-      children
-    }
-  </StyledListItem>;
-};
-
-export const OptionOutside = styled(ListItem).attrs(applyDefaultTheme)`
   ${CssItem};
 
   padding-left: ${props => {

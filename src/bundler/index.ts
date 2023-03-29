@@ -11,6 +11,7 @@ const initEsbuild = async () => {
 		if (!service) {
 			service = esbuild.initialize({
 				wasmURL: `${CDN_URL}/esbuild-wasm@0.14.42/esbuild.wasm`,
+        worker: true
 			});
 		}
 		await service;

@@ -27,7 +27,7 @@ interface IRecordAsyncProps {
 export const RecordAsync: FC<IRecordAsyncProps> = (props) => {
   const { id, name, window, datasheet, triggerFn, nextFn } = props;
   const [disabled, setDisabled] = useState(false);
-  const { color } = useTheme() as any;
+  const { color } = useTheme();
   const [title, setTitle] = useState<null | string>(null);
 
   useMount(() => {

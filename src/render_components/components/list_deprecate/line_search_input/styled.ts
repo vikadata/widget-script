@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { IWrapperDivProps } from './interface';
-import { applyDefaultTheme } from '@apitable/components';
+import { applyDefaultTheme } from '../../utils';
 
 const INPUT_SIZE = {
   small: '24px',

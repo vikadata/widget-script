@@ -6,6 +6,8 @@ import { htmlTemplate } from './html_template';
 import { InputClass, OutputClass } from '../../render_components';
 import { editorState, updateLogs, updateRunningState, useDispatch, useSelector } from '../../store';
 import { Container, Iframe } from './styled';
+import { ThemeProvider } from 'styled-components';
+import { dark } from '@apitable/components';
 
 export const PreviewPanel = () => {
   const dispatch = useDispatch();
@@ -63,14 +65,16 @@ export const PreviewPanel = () => {
 
   return (
     <Container>
-      <Iframe
-        ref={iframeRef}
-        title="users-html"
-        srcDoc={htmlTemplate}
-        sandbox="allow-same-origin allow-scripts allow-popups"
-        frameBorder={'none'}
-        onLoad={onLoad}
-      />
+      <ThemeProvider theme={dark}>
+        <Iframe
+          ref={iframeRef}
+          title="users-html"
+          srcDoc={htmlTemplate}
+          sandbox="allow-same-origin allow-scripts allow-popups"
+          frameBorder={'none'}
+          onLoad={onLoad}
+        />
+      </ThemeProvider>
     </Container>
   )
 }

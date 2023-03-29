@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { shallowEqual } from 'react-redux';
 import { t } from '@apitable/widget-sdk';
-import { useTheme } from '@apitable/components';
+import { getThemeName, useTheme } from '@apitable/components';
 import { ChevronDownOutlined, ChevronUpOutlined, ColumnLinktableFilled } from '@apitable/icons';
 import { editorState, toggleDocumentPane, useDispatch, useSelector } from '../../store';
 import Settings from '../../../settings.json';
@@ -21,7 +21,7 @@ import {
 export const DocumentPanel = () => {
   const { isDocumentPaneOpen } = useSelector(editorState, shallowEqual);
   const dispatch = useDispatch();
-  const { color } = useTheme() as any;
+  const { color } = useTheme();
   const iframeRef = useRef<any>();
 
   const IconComponent = isDocumentPaneOpen ? ChevronDownOutlined : ChevronUpOutlined;
@@ -58,7 +58,7 @@ export const DocumentPanel = () => {
         <Iframe
           ref={iframeRef}
           title="users-html"
-          src={Settings.help_document_url}
+          src={`${Settings.help_document_url}?theme=${getThemeName()}`}
           sandbox="allow-same-origin allow-scripts"
           frameBorder={'none'}
         />

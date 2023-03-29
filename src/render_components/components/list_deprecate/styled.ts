@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
-import { applyDefaultTheme, IOption } from '@apitable/components';
+import { IOption } from '@apitable/components';
 import { Typography } from '../typography';
+import { applyDefaultTheme } from '../utils';
 
 export const StyledItemContainer = styled.div.attrs(applyDefaultTheme) <IOption & { height: number }>`
   position: relative;

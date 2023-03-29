@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
-import { applyDefaultTheme, fontVariants, ITypographyProps } from '@apitable/components';
+import { fontVariants, ITypographyProps } from '@apitable/components';
+import { applyDefaultTheme } from '../utils';
 
 export const TypographyBase = styled.div.attrs(applyDefaultTheme) <Required<ITypographyProps> & {
   cssTextOverflow: boolean, cssLineClamp: boolean, rows: number 

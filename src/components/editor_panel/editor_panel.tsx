@@ -14,7 +14,7 @@ export const EditorPanel = (props) => {
   const meta = useMeta();
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const monaco = useMonaco();
-  const { color } = useTheme() as any;
+  const { color } = useTheme();
   const { run } = useDebounceFn((value) => {
     onChange(value)
   });
