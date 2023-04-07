@@ -1,22 +1,23 @@
 import React, { FC } from 'react';
-import { useTheme } from '@apitable/components';
 import { StyleSheetManager } from 'styled-components';
+import { TextContainer } from './styled';
+import { IContentWindow } from '../../render_base';
 
 interface ITextProps {
   name: string;
+  window: IContentWindow;
 }
 
 export const Text: FC<ITextProps> = (props) => {
-  const { name } = props;
-  const { color } = useTheme();
+  const { name, window } = props;
 
   return (
     <StyleSheetManager 
       target={window.document.head}
     >
-      <div style={{ color: color.textStaticPrimary }}>
+      <TextContainer>
         {name}
-      </div>
+      </TextContainer>
     </StyleSheetManager>
   );
 }

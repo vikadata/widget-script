@@ -15,10 +15,9 @@ export class OutputClass extends RenderBase implements Output {
   }
 
   public markdown(source: string) {
+    const props = { source };
     this.renderComponent(
-      <Markdown 
-        source={source}
-      />
+      <Markdown {...props as any} />
     );
   }
 
