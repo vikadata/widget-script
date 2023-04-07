@@ -16,7 +16,6 @@
 		"sourceType": "module"
 	},
 	"plugins": [
-		"vika",
 		"react",
 		"react-hooks",
 		"@typescript-eslint"

@@ -1,13 +1,13 @@
 {
-  "version": "0.0.8",
-  "description": "a vika widget",
+  "version": "0.0.11",
+  "description": "a apitable widget",
   "engines": {
     "node": ">=8.x"
   },
   "keywords": [
-    "vika",
+    "apitable",
     "widgets",
-    "vika widgets"
+    "apitable widgets"
   ],
   "main": "./dist/index",
   "module": "./dist/index",
